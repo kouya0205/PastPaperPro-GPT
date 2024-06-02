@@ -1,12 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
+import { Header } from './components/layout/header/header';
+import { Footer } from './components/layout/footer/footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "PastPaperPro",
-  description: "PastPaperPro is a platform for students to access past papers and other resources.",
+  title: 'PastPaperPro',
+  description:
+    'PastPaperPro is a platform for students to access past papers and other resources.',
 };
 
 export default function RootLayout({
@@ -16,7 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body className={inter.className}>
+        <MantineProvider>
+          <Header />
+          {children}
+          <Footer />
+        </MantineProvider>
+      </body>
     </html>
   );
 }
