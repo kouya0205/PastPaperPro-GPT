@@ -5,6 +5,7 @@ import {
   IconBrandTwitter,
   IconBrandYoutube,
   IconBrandInstagram,
+  IconBrandX,
 } from '@tabler/icons-react';
 import classes from './Footer.module.css';
 
@@ -83,10 +84,7 @@ export function Footer() {
           wrap="nowrap"
         >
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter
-              style={{ width: rem(18), height: rem(18) }}
-              stroke={1.5}
-            />
+            <IconBrandX stroke={1} />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
             <IconBrandYoutube
