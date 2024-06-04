@@ -5,6 +5,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { Header } from './components/layout/header/header';
 import { Footer } from './components/layout/footer/footer';
+import SupabaseListener from './api/auth/SupebaseListener';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider>
-          <Header />
+          <SupabaseListener />
           {children}
           <Footer />
         </MantineProvider>

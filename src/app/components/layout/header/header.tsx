@@ -32,6 +32,7 @@ import {
 import classes from './Header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { InputButton } from '../../ui/button/input/InputButton';
 
 const mockdata = [
   {
@@ -95,7 +96,7 @@ export function Header() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box pb={15}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           {/*  <MantineLogo size={30} /> */}
@@ -162,6 +163,8 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="sm">
+            <InputButton />
+
             <Button
               variant="default"
               onClick={() => router.push('/auth/login')}
